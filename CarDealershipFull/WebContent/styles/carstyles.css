@@ -1,0 +1,40 @@
+.card {
+
+	max-height: 600px;
+	margin-top: 50px;
+	
+
+}
+
+.first{
+	position:absolute;
+}
+
+.second{
+	position: relative;
+    top: 315px;
+}
+
+.gensearch{
+	
+	margin-top: 50px;
+
+}
+
+.navbar{
+	background-color: #506DC7;
+}
+.warning{
+	
+	margin-top:50px;
+	margin-left:100px;
+}
+.theLot{
+	
+	margin-left:100px;
+}
+
+.searchOps{
+	
+	max-width:80px;
+}
