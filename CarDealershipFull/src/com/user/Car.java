@@ -37,7 +37,7 @@ public class Car implements Serializable {
 	public static final String path = "/Users/richardnava/Documents/dealership-files/";
 	Search search = new Search();
 	
-	
+	//default constructor
 	public Car() {}
 	
 	// constructor for view sold inventory
@@ -60,8 +60,6 @@ public class Car implements Serializable {
 	public Car(String make, String model, String vin, 
 			String color, double price, int year
 			,int mpg, int hwy, boolean used, int miles, int daysInLot, Buyer buyer) {
-		
-		
 		
 		
 		
@@ -186,6 +184,8 @@ public class Car implements Serializable {
 		
 	}
 
+	
+	// old function to save to a file. replaced with a function that edits the current file called Car_Lot.txt
 	public void saveToFile() {
 		
 		String fileName = path + "Car_Lot.txt";
@@ -206,7 +206,7 @@ public class Car implements Serializable {
 		
 	}
 	
-	
+	// unused function. my attempt at saving an image to a file and rebuffering it after reading it.
 	 public void saveImage(File img) {
 	 
 	 
@@ -352,6 +352,7 @@ public class Car implements Serializable {
 		this.datePurchased = datePurchased;
 	}
 
+	
 	@Override
 	public String toString() {
 		return  make + "," + model +"," +  vin 
@@ -377,11 +378,9 @@ public class Car implements Serializable {
 	}
 	
 	
-	// When the a car is bought
+	// Function used when a car is sold
 	public static void carSold(Car carBought, Buyer buyer) {
-		
-		//ArrayList<Car> buyerLot = (ArrayList<Car>)session.getAttribute("lot");
-		
+				
 		
 		// read the full file to generate the full lot in an array
 		String content = "";
@@ -404,7 +403,7 @@ public class Car implements Serializable {
 		
 		
 		
-		//split file into cars
+		//split file into array list of cars
 		String[] eachCar = content.split("--");
 		
 		ArrayList<Car> lot = new ArrayList<>();
@@ -458,8 +457,8 @@ public class Car implements Serializable {
 		carBought.setBuyer(buyer);
 		
 		
+		
 		// rewrite the file without the sold car
-	
 		String fileName = path + "Car_Lot.txt" ;
 		try {
 			FileWriter fstream = new FileWriter(fileName);
@@ -502,6 +501,7 @@ public class Car implements Serializable {
 	
 	}
 	
+	// Format for Purchased car file
 	public String toPurchaseFormat() {
 		
 		return make + "," + model + "," + vin + "," + year + "," + color + ","+ price + "," + datePurchased + "," + buyer + "--";
@@ -528,6 +528,7 @@ public class Car implements Serializable {
 		return dateSold;
 	}
 	
+	// calculates the number of days the car has been in the lot.
 	public int calcDaysInLot(Date lotDate) {
 		
 		Date today = Calendar.getInstance().getTime(); 
@@ -560,6 +561,8 @@ public class Car implements Serializable {
 		this.dateSoldInString = dateSoldInString;
 	}
 	
+	
+	// Format for sales report
 	public String reportFormat() {
 		
 		return "Customer: " + buyer + "Vehicle: " +year+ " " + make + " " + model + " " + color + " " + "\n" 

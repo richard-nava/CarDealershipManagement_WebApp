@@ -60,6 +60,7 @@ public class BuyConfirmation extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		Car.carSold(lot.get(0),profile);
 		
 		session.setAttribute("lot", lot);

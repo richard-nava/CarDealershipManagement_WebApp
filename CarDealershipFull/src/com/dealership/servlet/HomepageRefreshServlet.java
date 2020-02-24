@@ -37,7 +37,6 @@ public class HomepageRefreshServlet extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		final String path = "/Users/richardnava/Documents/dealership-files/Car_Lot.txt";
 		
-		//System.out.println("In search servlet");
 		ArrayList<Car> lot = new ArrayList<Car>();
 		
 		Search search = new Search();

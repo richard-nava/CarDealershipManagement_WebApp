@@ -19,7 +19,7 @@ public class Inventory {
 	
 	public Inventory() {}
 	
-
+	
 	public ArrayList<Car> getLot() {
 		return lot;
 	}
@@ -49,8 +49,9 @@ public class Inventory {
 	}
 	
 	
-	// checks the price of the car and adjusts it 
-	// based on the days in the lot
+	/* checks the price of the car and adjusts it 
+	* based on the days in the lot
+	*/
 	public static void lotPriceCheck(Car car) {
 	
 		Date today = Calendar.getInstance().getTime(); 
@@ -60,14 +61,10 @@ public class Inventory {
 			car.setPrice(currentPrice - (currentPrice * 0.10));
 		}
 		
-		
-			
-	
-	
 	}
 	
 	
-	// method for printing sales report
+	// Prints the sales report
 	public static void printSalesReport() {
 		final String path = "/Users/richardnava/Documents/dealership-files/";
 

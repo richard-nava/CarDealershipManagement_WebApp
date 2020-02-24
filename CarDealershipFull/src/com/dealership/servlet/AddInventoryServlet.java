@@ -43,6 +43,7 @@ public class AddInventoryServlet extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		
 		ArrayList<Car> lot = (ArrayList<Car>)session.getAttribute("lot");
+		
 	
 		if(lot == null) {
 			
@@ -52,9 +53,7 @@ public class AddInventoryServlet extends HttpServlet {
 
 		
 		Car newCar = new Car();
-		
-		//String imgLink = request.getParameter("img");
-		//File imgReal = new File(request.getParameter("img"));
+
 		
 		newCar.setMake(request.getParameter("make"));
 		newCar.setModel(request.getParameter("model"));
@@ -70,20 +69,13 @@ public class AddInventoryServlet extends HttpServlet {
 		try {
 			newCar.setDateAdded(newCar.lotDate(dateAdded));
 		} catch (ParseException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
-		//newCar.setDateAddedInString(request.getParameter("dateAdded"));
-		
-		//String dateInString = request.getParameter("dateAdded");
-		//newCar.setDateInString(dateInString);
 		
 		
 		
 		newCar.setMiles(Integer.parseInt(request.getParameter("miles")));
-		//newCar.setMiles(Integer.parseInt(request.getParameter("miles")));
-		//newCar.setImage(imgReal);
+	
 	
 		if(request.getParameter("nou").equals("new")) {
 			
@@ -132,13 +124,6 @@ public class AddInventoryServlet extends HttpServlet {
 		
 		session.setAttribute("lot", lot);
 				
-
-//
-//		
-//		ArrayList<Car> lot = Inventory.addToLot(newCar, priorLot);
-		
-//		session.setAttribute("lot", lot);
-
 		
 		RequestDispatcher rs = request.getRequestDispatcher("AdditionConfirm.jsp");
 		rs.forward(request, response);

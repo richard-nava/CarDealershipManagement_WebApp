@@ -33,7 +33,7 @@ public class CarDescriptionServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		HttpSession session = request.getSession(true);
 		final String path = "/Users/richardnava/Documents/dealership-files/Car_Lot.txt";
 
@@ -41,13 +41,11 @@ public class CarDescriptionServlet extends HttpServlet {
 		
 		Search search = new Search();
 		lot = search.getInventory();
-		//String vin = request.getParameter("vin");
 		
 	
 		String vin = request.getParameter("vin");
 		
-		System.out.println("*******WE IN THE DESCRIPT SERVLET*****");
-		System.out.println(vin);
+		
 		
 		lot = search.carDescription(vin, lot);
 		

@@ -15,6 +15,7 @@ public class Search implements Serializable {
 
 	public Search() {}
 	
+	// reads the Car_Lot file to generate current inventory
 	public ArrayList<Car> getInventory() {
 		
 		final String path = "/Users/richardnava/Documents/dealership-files/";
@@ -87,6 +88,8 @@ public class Search implements Serializable {
 	}
 	
 	
+	/* finds a car that matches the typed parameter (search parameters) and
+	key parameters (selected from dropdown ex: make, model, color, year) that's included in the inventory  */ 
 	public ArrayList<Car> searchBy(String searchParam, String keyVal, ArrayList<Car> lot) {
 		
 		System.out.println("We are in search by method");
@@ -211,6 +214,10 @@ public class Search implements Serializable {
 		
 	}
  
+	
+	/* searches for a specifc car via the vin number and generates a new session inventory that contains
+	 * only that car
+	 */
 	public ArrayList<Car> carDescription(String vin, ArrayList<Car> lot) {
 		
 		ArrayList<Car> newLot = new ArrayList<>();
@@ -229,6 +236,10 @@ public class Search implements Serializable {
 		
 	}
 	
+	
+	/*
+	 * Reads the file containing the inventory that was sold
+	 */
 	public ArrayList<Car> getSoldInventory(){
 		final String path = "/Users/richardnava/Documents/dealership-files/";
 
@@ -328,7 +339,6 @@ public class Search implements Serializable {
 		return lot;
 	}
 	
-		
-		
+
 	
 }

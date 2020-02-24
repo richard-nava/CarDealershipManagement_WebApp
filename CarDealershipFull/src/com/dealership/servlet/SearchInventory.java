@@ -47,9 +47,6 @@ public class SearchInventory extends HttpServlet {
 		
 		lot = search.getInventory();
 		
-		/*
-		 * for(Car va:lot) { System.out.println(va.getVin()); }
-		 */
 		
 		String searchType = request.getParameter("searchParam");
 		
